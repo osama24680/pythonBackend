@@ -4,7 +4,8 @@ from flask_cors import CORS
 import pickle
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, resources={r"/*": {"origins": "*"}})
+
 model = pickle.load(open("calories_model.pkl", "rb"))
 
 
